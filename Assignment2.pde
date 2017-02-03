@@ -10,8 +10,8 @@ void setup()
    
    //Creating objects
    Play = new Button(400,100,100,100,"Play Game");
-   Instructions = new Button(400,100,300,100,"Instructions");
-   Exit = new Button(400,100,500,100,"Exit");
+   Instructions = new Button(400,100,100,300,"Instructions");
+   Exit = new Button(400,100,100,500,"Exit");
    
 }
 
@@ -26,6 +26,8 @@ void draw()
     {
       background(0);
       Play.displayButton();
+      Instructions.displayButton();
+      Exit.displayButton();
       break;
     }
   }//end of the switch statement
