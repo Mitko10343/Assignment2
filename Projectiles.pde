@@ -21,5 +21,13 @@ class Projectile
   void updateProjectile()
   {
     y = y+5;
+    if(y != height)
+    {
+      signal =1;
+    }
+    else
+    {
+      signal =0;
+    }
   }
 }
