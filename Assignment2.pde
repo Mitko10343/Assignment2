@@ -9,9 +9,9 @@ void setup()
    
    
    //Creating objects
-   Play = new Button(400,100,100,100,"Play Game");
-   Instructions = new Button(400,100,100,300,"Instructions");
-   Exit = new Button(400,100,100,500,"Exit");
+   Play = new Button(400,100,100,100,"Play Game",1);
+   Instructions = new Button(400,100,100,300,"Instructions",2);
+   Exit = new Button(400,100,100,500,"Exit",3);
    
 }
 
@@ -26,8 +26,29 @@ void draw()
     {
       background(0);
       Play.displayButton();
+      Play.mousePressed();
       Instructions.displayButton();
+      Instructions.mousePressed();
       Exit.displayButton();
+      Exit.mousePressed();
+      break;
+    }
+    
+    case 1:
+    {
+      background(255);  
+      break;
+    }
+    
+    case 2:
+    {
+      background(150);
+      break;
+    }
+    
+    case 3:
+    {
+      exit();
       break;
     }
   }//end of the switch statement
