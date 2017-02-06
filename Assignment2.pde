@@ -55,7 +55,7 @@ void draw()
       
       background(0);  
       character.drawChar();
-      character.mousePressed();
+      character.keyPressed();
       character.updateChar(); 
       
       for(int i=0; i<projectile.size(); i++)
