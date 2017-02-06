@@ -6,7 +6,7 @@ Projectile Projectile;
 Char character;
 
 //Declaring Array List
-ArrayList<Projectile> projectile;
+//ArrayList<Projectile> projectile;
 
 void setup()
 {
@@ -19,14 +19,8 @@ void setup()
    Exit = new Button(400,100,100,500,"Exit",3);
    character = new Char();
    
-   //Projectile = new Projectile(random(20,width -20),-25,20,20);
+   Projectile = new Projectile(random(20,width -20),-25,20,20);
    
-   //Creating an ArryaList
-   projectile = new ArrayList<Projectile>();
-   for(int i=0; i<10;i++)
-    {
-      projectile.add(new Projectile(random(20,width -20),random(-405,-25),20,20));
-    }
 }
 
 int movement =0;
@@ -57,15 +51,9 @@ void draw()
       character.drawChar();
       character.keyPressed();
       character.updateChar(); 
+      Projectile .drawProjectile();
+      Projectile .updateProjectile();
       
-      for(int i=0; i<projectile.size(); i++)
-      {
-        Projectile p =projectile.get(i);
-
-        p.drawProjectile();
-        p.updateProjectile();
-
-      }
       break;
     }
     

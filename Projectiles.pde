@@ -29,5 +29,20 @@ class Projectile
     {
       signal =0;
     }
+    if(isDead())
+    {
+      y = -25;
+      x = random(40,width-40);
+    }
+  }
+  
+  Boolean isDead()
+  {
+    if(y == height)
+    {
+      return true;
+      
+    }
+    return false;
   }
 }

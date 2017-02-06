@@ -32,11 +32,7 @@ class Char
  
     }
     
-    if(x+40 > width);
-    {
-      x = 0 - 40;
-
-    }
+    
     
 }
   
