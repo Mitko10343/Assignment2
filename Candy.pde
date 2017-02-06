@@ -1,4 +1,4 @@
-class Candy 
+class Candy extends Char
 {
   int W,H;
   int speed=10;
@@ -22,7 +22,7 @@ class Candy
   
   void updateCandy()
   {
-    if(signal == 2)
+    if(signal == 4)
     {
       go = 1;
     }
@@ -36,7 +36,6 @@ class Candy
     {
       y = -20;
     }
-    
   }
   
   Boolean isDead()

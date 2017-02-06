@@ -56,6 +56,7 @@ void draw()
       character.updateChar(); 
       Projectile .drawProjectile();
       Projectile .updateProjectile();
+      Projectile.projectileCollision();
       candy.drawCandy();
       candy.updateCandy();
    
@@ -75,5 +76,5 @@ void draw()
     }
   }//end of the switch statement
  
-  println(signal);
+ println(gamestate);
 }

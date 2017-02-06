@@ -1,4 +1,4 @@
-class Projectile
+class Projectile extends Char
 {
   float x,y;
   float W,H;
@@ -21,18 +21,22 @@ class Projectile
   void updateProjectile()
   {
     y = y+5;
-    if(y != height)
-    {
-      signal =1;
-    }
-    else
-    {
-      signal =0;
-    }
-    if(isDead())
+
+   if(isDead())
     {
       y = -25;
       x = random(40,width-40);
+    }
+  }
+  
+  void projectileCollision()
+  {
+    if(y == ypos)
+    {
+      if((x+10)>xpos && xpos < (x-10))
+      {
+        gamestate = 4;
+      }
     }
   }
   
