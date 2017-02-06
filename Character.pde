@@ -3,6 +3,7 @@ class Char
   int x = width/2;
   int y = height-50;
   int movement = 0;
+  int speed = 5;
   
 
   
@@ -15,7 +16,7 @@ class Char
   
   void updateChar()
   {
-    if(movement ==0)
+   /* if(movement ==0)
     {
       x = x -5;
     }
@@ -24,12 +25,15 @@ class Char
     {
       x = x + 5;
     }
-    
+    */
     
     if(x+40 < 0)
     {
-      x = width+40;
- 
+      x = width+20;
+    }
+    if(x+40 >width+60)
+    {
+      x = -20;
     }
     
     
@@ -40,16 +44,15 @@ class Char
   {
     if(keyPressed)
     {
-
-        if(movement == 0)
-        {
-          movement =1;
-        }
-        else
-        {
-          movement = 0;
-        }
-      
+        
+      if(key == 'a' || key == 'A')
+      {
+        x = x -speed;
+      }
+      if(key == 'd' || key == 'D')
+      {
+        x = x +speed;
+      }     
     }
   }
 }

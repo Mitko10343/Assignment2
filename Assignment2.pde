@@ -4,6 +4,7 @@ Button Exit;
 Button Instructions;
 Projectile Projectile;
 Char character;
+Candy candy;
 
 //Declaring Array List
 //ArrayList<Projectile> projectile;
@@ -20,6 +21,7 @@ void setup()
    character = new Char();
    
    Projectile = new Projectile(random(20,width -20),-25,20,20);
+   candy = new Candy(random(50,width-50),-20,30,20);
    
 }
 
