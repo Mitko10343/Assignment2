@@ -28,6 +28,7 @@ void setup()
 int movement =0;
 int gamestate =0;
 int signal =0;
+int go=0;
 
 void draw()
 {
@@ -55,7 +56,9 @@ void draw()
       character.updateChar(); 
       Projectile .drawProjectile();
       Projectile .updateProjectile();
-      
+      candy.drawCandy();
+      candy.updateCandy();
+   
       break;
     }
     
@@ -71,5 +74,6 @@ void draw()
       break;
     }
   }//end of the switch statement
-  
+ 
+  println(signal);
 }

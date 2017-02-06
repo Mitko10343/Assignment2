@@ -1,9 +1,10 @@
-class Candy
+class Candy 
 {
   int W,H;
-  int speed=5;
-  float y,x;
-  Candy(int x,int y,int W, int H)
+  int speed=10;
+  float x,y;
+  
+  Candy(float x,float y,int W, int H)
   {
     this.x = x;
     this.y = y;
@@ -21,7 +22,16 @@ class Candy
   
   void updateCandy()
   {
-    y = y-speed;
+    if(signal == 2)
+    {
+      go = 1;
+    }
+    
+    if( go == 1)
+    {
+      y = y+speed;
+    }
+    
     if(isDead())
     {
       y = -20;
@@ -33,6 +43,8 @@ class Candy
   {
     if(y ==height)
     {
+      go = 0;
+      signal =0;
       return true;
     }
     return false;

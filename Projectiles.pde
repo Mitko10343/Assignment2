@@ -40,6 +40,7 @@ class Projectile
   {
     if(y == height)
     {
+      signal++;
       return true;
       
     }
