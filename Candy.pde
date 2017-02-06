@@ -1,7 +1,7 @@
 class Candy extends Char
 {
   int W,H;
-  int speed=10;
+  int speed=5;
   float x,y;
   
   Candy(float x,float y,int W, int H)
@@ -35,6 +35,18 @@ class Candy extends Char
     if(isDead())
     {
       y = -20;
+    }
+    
+  }
+  
+  void candyCollision()
+  {
+    if(y == ypos)
+    {
+      if((x+10)>xpos && xpos > (x-10))
+      {
+        score = score +25;
+      }
     }
   }
   

@@ -29,6 +29,7 @@ int movement =0;
 int gamestate =0;
 int signal =0;
 int go=0;
+int score=0;
 
 void draw()
 {
@@ -51,6 +52,12 @@ void draw()
     {
       
       background(0);  
+      if(frameCount%120 == 0)
+      {
+        score++;
+      }
+      
+      text("Score"+score, 100,100);
       character.drawChar();
       character.keyPressed();
       character.updateChar(); 
@@ -59,6 +66,7 @@ void draw()
       Projectile.projectileCollision();
       candy.drawCandy();
       candy.updateCandy();
+      candy.candyCollision();
    
       break;
     }
@@ -74,7 +82,13 @@ void draw()
       exit();
       break;
     }
+    
+    case 4:
+    {
+      text("Game Over",width/2,height/2);
+      text("Your Score is :" + score,width/2,(height/2)-100);
+    }
   }//end of the switch statement
  
- println(gamestate);
+ 
 }

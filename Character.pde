@@ -25,10 +25,7 @@ class Char
     {
       xpos = -20;
     }
-    
-    
-    
-}
+  }
   
   void keyPressed()
   {
@@ -45,4 +42,6 @@ class Char
       }     
     }
   }
+
+  
 }
