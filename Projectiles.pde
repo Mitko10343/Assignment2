@@ -28,12 +28,23 @@ class Projectile extends Char
       y = -25;
       x = random(40,width-40);
     }
-    println(speed);
     
-    if(frameCount %120 == 0)
+    if(speed < 10)
     {
-      speed +=0.5;
+      if(frameCount %120 == 0)
+      {
+        speed +=0.5;
+      }
     }
+    if(speed==10 && level <max_level)
+    {
+       level++;
+       speed =5;
+       
+       text("Level:"+level,width/2-50,height/2);
+    }
+    
+    println(speed);
   }
   
   void projectileCollision()

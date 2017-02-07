@@ -3,11 +3,12 @@ Button Play;
 Button Exit;
 Button Instructions;
 Projectile Projectile;
+Projectile projectile2;
 Char character;
 Candy candy;
 
 //Declaring Array List
-//ArrayList<Projectile> projectile;
+ArrayList<Projectile> projectile = new ArrayList<Projectile>();
 
 void setup()
 {
@@ -20,7 +21,8 @@ void setup()
    Exit = new Button(400,100,100,500,"Exit",3);
    character = new Char();
    
-   Projectile = new Projectile(random(20,width -20),-25,20,20);
+   //Projectile = new Projectile(random(20,width -20),-25,20,20);
+   //projectile2 = new Projectile(random(20,width -20),-25,20,20);
    candy = new Candy(random(50,width-50),-20,30,20);
    
 }
@@ -29,9 +31,15 @@ int gamestate =0;
 int signal =0;
 int go=0;
 int score=1;
+int level=1;
+int max_level=5;
 
 void draw()
 {
+  for(int i=0; i<max_level; i++)
+  {
+     projectile.add( new Projectile(random(20,width -20),random(-200,-25),20,20));
+  }
   //Switch statement to control what screen to be displayed
   switch(gamestate)
   {
@@ -56,13 +64,29 @@ void draw()
         score++;
       }
       
-      text("Score"+score, 100,100);
+      text("Score:"+score, 10,30);
       character.drawChar();
       character.keyPressed();
       character.updateChar(); 
-      Projectile .drawProjectile();
+      
+      for(int i=0; i<level;i++)
+      {
+        Projectile p = projectile.get(i);
+        p.drawProjectile();
+        p.updateProjectile();
+        p.projectileCollision();
+        
+      }
+      println("level"+level);
+     /* Projectile .drawProjectile();
       Projectile .updateProjectile();
       Projectile.projectileCollision();
+      if(level == 2)
+      {
+        projectile2.drawProjectile();
+        projectile2.updateProjectile();
+        projectile2.
+      }*/
       candy.drawCandy();
       candy.updateCandy();
       candy.candyCollision();
