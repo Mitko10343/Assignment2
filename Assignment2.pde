@@ -2,6 +2,7 @@
 Button Play;
 Button Exit;
 Button Instructions;
+Button PlayAgain;
 Projectile Projectile;
 Projectile projectile2;
 Char character;
@@ -23,13 +24,14 @@ void setup()
    Play = new Button(400,100,100,100,"Play Game",1);
    Instructions = new Button(400,100,100,300,"Instructions",2);
    Exit = new Button(400,100,100,500,"Exit",3);
+   PlayAgain = new Button(400,100,100,500,"Play Again",5);
    character = new Char();
    candy = new Candy(random(50,width-50),-20,30,20);
    
 }
 
 
-int movement =0;
+
 int gamestate =0;
 int signal =0;
 int go=0;
@@ -64,17 +66,18 @@ void draw()
     
     case 1:
     {
-       
       background(0);  
       backgroundGrid();
+      
       //increment the player score by one every 2 seconds
       if(frameCount%120 == 0)
       {
         score++;
       }
       
-      text("Score:"+score, 10,30,255);
-      text("Level:"+level,width-100,30,255);
+      fill(0,0,255);
+      text("Score:"+score, 50,30,255);
+      text("Level:"+level,width-50,30,255);
       character.drawChar();
       character.keyPressed();
       character.updateChar(); 
@@ -112,7 +115,14 @@ void draw()
       textAlign(CENTER);
       text("Game Over",width/2,height/2);
       text("Your Score is :" + score,width/2,(height/2)-100);
+      PlayAgain.displayButton();
+      PlayAgain.mousePressed();
       break;
+    }
+    
+    case 5:
+    {
+      reset();
     }
   }//end of the switch statement
  
@@ -121,13 +131,23 @@ void draw()
 
 void backgroundGrid()
 {
-  for(int i=0; i<width; i+=25)
+  for(int i=-15; i<width+10; i+=30)
   {
-    for(int j=0; j<height; j+=25)
+    for(int j=10; j<height; j+=30)
     {
       noStroke();
       fill(89,216,252,150);
       ellipse(i,j,2,2);
     }
   }
+}
+
+void reset()
+{  
+   gamestate =1;
+   signal =0;
+   go=0;
+   score=1;
+   level=1;
+   max_level=5;
 }

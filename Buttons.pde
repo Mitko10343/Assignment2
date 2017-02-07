@@ -30,7 +30,8 @@ class Button
     }
     rect(x,y,W,H);
     fill(255);
-    text(Content,x+((W/2)-70),y+((H/2)+10));
+    textAlign(CENTER);
+    text(Content,width/2,y+((H/2)+10));
     textSize(25);    
   }
   
@@ -48,4 +49,5 @@ class Button
       }
     }
   }
+ 
 }
