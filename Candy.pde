@@ -43,7 +43,7 @@ class Candy extends Char
   {
     if(y == ypos)
     {
-      if((x+10)>xpos && xpos > (x-10))
+       if((x-10)>xpos && xpos < (x+10))
       {
         score = score +25;
       }

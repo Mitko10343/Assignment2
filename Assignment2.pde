@@ -85,10 +85,13 @@ void draw()
     
     case 4:
     {
+      clear();
+      textAlign(CENTER);
       text("Game Over",width/2,height/2);
       text("Your Score is :" + score,width/2,(height/2)-100);
+      break;
     }
   }//end of the switch statement
  
- 
+ println(gamestate);
 }

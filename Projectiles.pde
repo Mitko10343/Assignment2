@@ -31,18 +31,16 @@ class Projectile extends Char
   
   void projectileCollision()
   {
-    if(y == ypos)
+   
+    if(character.xpos > x && character.xpos < x + W && y > height - 100)
     {
-      if((x+10)>xpos && xpos > (x-10))
-      {
-        gamestate = 4;
-      }
+       gamestate = 4;
     }
+   
   }
   
   Boolean isDead()
-  {
-    if(y == height)
+  {    if(y == height)
     {
       signal++;
       return true;
