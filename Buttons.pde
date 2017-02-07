@@ -19,6 +19,8 @@ class Button
   void displayButton()
   {
     fill(0);
+    strokeWeight(3);
+    stroke(255);
     if(mouseX > x && mouseX < x+W)
     {
       if(mouseY > y && mouseY < y+H)
@@ -27,8 +29,6 @@ class Button
       }
     }
     rect(x,y,W,H);
-    strokeWeight(3);
-    stroke(255);
     fill(255);
     text(Content,x+((W/2)-70),y+((H/2)+10));
     textSize(25);    

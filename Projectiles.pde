@@ -29,20 +29,30 @@ class Projectile extends Char
       x = random(40,width-40);
     }
     
-    if(speed < 10)
-    {
-      if(frameCount %120 == 0)
-      {
-        speed +=0.5;
-      }
-    }
-    if(speed==10 && level <max_level)
-    {
-       level++;
-       speed =5;
-       
-       text("Level:"+level,width/2-50,height/2);
-    }
+     if(level == max_level)
+     {
+         if(frameCount %120 ==0)
+         {
+           speed = random(5,15);
+         }
+     }
+     else
+     {
+        if(speed < 10)
+        {
+          if(frameCount %120 == 0)
+          {
+            speed +=0.5;
+          }
+        }
+        if(speed==10 && level <max_level)
+        {
+           level++;
+           speed =5;
+        }
+     }
+    
+    
     
     println(speed);
   }

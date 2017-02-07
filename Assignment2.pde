@@ -14,18 +14,21 @@ void setup()
 {
    size(600,800);
    
+   PFont font;
+   
+   font = loadFont("Stencil-48.vlw");
+   textFont(font,16);
    
    //Creating objects
    Play = new Button(400,100,100,100,"Play Game",1);
    Instructions = new Button(400,100,100,300,"Instructions",2);
    Exit = new Button(400,100,100,500,"Exit",3);
    character = new Char();
-   
-   //Projectile = new Projectile(random(20,width -20),-25,20,20);
-   //projectile2 = new Projectile(random(20,width -20),-25,20,20);
    candy = new Candy(random(50,width-50),-20,30,20);
    
 }
+
+
 int movement =0;
 int gamestate =0;
 int signal =0;
@@ -36,16 +39,20 @@ int max_level=5;
 
 void draw()
 {
+  //making an array list with objects
   for(int i=0; i<max_level; i++)
   {
      projectile.add( new Projectile(random(20,width -20),random(-200,-25),20,20));
   }
+  
+  
   //Switch statement to control what screen to be displayed
   switch(gamestate)
   {
     case 0:
     {
       background(0);
+      backgroundGrid();
       Play.displayButton();
       Play.mousePressed();
       Instructions.displayButton();
@@ -57,14 +64,17 @@ void draw()
     
     case 1:
     {
-
+       
       background(0);  
+      backgroundGrid();
+      //increment the player score by one every 2 seconds
       if(frameCount%120 == 0)
       {
         score++;
       }
       
-      text("Score:"+score, 10,30);
+      text("Score:"+score, 10,30,255);
+      text("Level:"+level,width-100,30,255);
       character.drawChar();
       character.keyPressed();
       character.updateChar(); 
@@ -77,16 +87,6 @@ void draw()
         p.projectileCollision();
         
       }
-      println("level"+level);
-     /* Projectile .drawProjectile();
-      Projectile .updateProjectile();
-      Projectile.projectileCollision();
-      if(level == 2)
-      {
-        projectile2.drawProjectile();
-        projectile2.updateProjectile();
-        projectile2.
-      }*/
       candy.drawCandy();
       candy.updateCandy();
       candy.candyCollision();
@@ -116,4 +116,18 @@ void draw()
     }
   }//end of the switch statement
  
+}
+
+
+void backgroundGrid()
+{
+  for(int i=0; i<width; i+=25)
+  {
+    for(int j=0; j<height; j+=25)
+    {
+      noStroke();
+      fill(89,216,252,150);
+      ellipse(i,j,2,2);
+    }
+  }
 }
