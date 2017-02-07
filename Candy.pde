@@ -41,12 +41,13 @@ class Candy extends Char
   
   void candyCollision()
   {
-    if(y == ypos)
+    if(character.xpos +30> x - 10 && character.xpos < x + 10 && y > height - 100)
     {
-       if((x-10)>xpos && xpos < (x+10))
-      {
-        score = score +25;
-      }
+       score += 25;
+       y = -25;
+       x = random(40,width-40);
+       go =0;
+       signal = 0;
     }
   }
   

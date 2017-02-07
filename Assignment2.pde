@@ -24,12 +24,11 @@ void setup()
    candy = new Candy(random(50,width-50),-20,30,20);
    
 }
-
 int movement =0;
 int gamestate =0;
 int signal =0;
 int go=0;
-int score=0;
+int score=1;
 
 void draw()
 {
@@ -50,7 +49,7 @@ void draw()
     
     case 1:
     {
-      
+
       background(0);  
       if(frameCount%120 == 0)
       {
@@ -93,5 +92,4 @@ void draw()
     }
   }//end of the switch statement
  
- println(gamestate);
 }

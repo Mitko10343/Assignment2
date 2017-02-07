@@ -2,6 +2,7 @@ class Projectile extends Char
 {
   float x,y;
   float W,H;
+  float speed = 5;
   
   Projectile(float x, float y, int W,int H)
   {
@@ -20,19 +21,25 @@ class Projectile extends Char
   
   void updateProjectile()
   {
-    y = y+5;
+    y = y+speed;
 
    if(isDead())
     {
       y = -25;
       x = random(40,width-40);
     }
+    println(speed);
+    
+    if(frameCount %120 == 0)
+    {
+      speed +=0.5;
+    }
   }
   
   void projectileCollision()
   {
    
-    if(character.xpos > x && character.xpos < x + W && y > height - 100)
+    if(character.xpos +30> x - 10 && character.xpos < x + 10 && y > height - 100)
     {
        gamestate = 4;
     }
@@ -40,7 +47,8 @@ class Projectile extends Char
   }
   
   Boolean isDead()
-  {    if(y == height)
+  {  
+    if(y > height)
     {
       signal++;
       return true;
@@ -48,4 +56,5 @@ class Projectile extends Char
     }
     return false;
   }
+ 
 }
