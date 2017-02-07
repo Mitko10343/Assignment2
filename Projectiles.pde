@@ -64,6 +64,7 @@ class Projectile extends Char
     {
        y=-25;
        xpos = width/2;
+       speed = 5;
        gamestate = 4;
     }
    
