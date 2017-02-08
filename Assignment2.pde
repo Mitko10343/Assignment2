@@ -108,8 +108,8 @@ void draw()
       
       fill(0,170,190);
       text("The point of the game is to avoid \n\n the red balls and collect \n\n the green ones",width/2,200);
-      text("Using the keys 'A' and 'D' move \n\n left or right to move",width/2,350);
-      text("
+      text("Using the keys 'A' and 'D' move \n\n left or right to move",width/2,400);
+      text("Try catching the Green balls as \n\n they give you 25 points.",width/2,550);
       break;
     }
     
