@@ -39,19 +39,16 @@ is changed.
 	exit. When a button is clicked then the gamestate is changes and the 
 	screen is changed.
 	
-	![alt text](screenshots/Main.jpg "Main Menu")
 	
 -case 1:
 	This is the game case. When the Play button is pressed this case is accessed
 	and the user can then play the actual game.
 	
-	![alt text](https://github.com/Mitko10343/Assignment2/tree/master/screenshots/play.jpg "Game Screen")
 	
 -case 2:
 	This is the instruction menu. It contains a simple description of what the
 	game does and how to play it.
 	
-	![alt text](screenshots/Inst.jpg "Instruction Menu")
 	
 -case 3:
 	This case is accessed when the exit button is clicked. It just exits the program.
@@ -60,7 +57,6 @@ is changed.
 	Case 4 is the game over screen. It is accesed after the character dies. This screen
 	tells the user their final score and offers them a chance to play again.
 	
-	![alt text](screenshots/GameOver.jpg "Game Over Screen")
 
 -case 5: 
     If the user chooses to play again,then this case is accesed. All this case does is 
@@ -68,14 +64,14 @@ is changed.
 	
 	
 #Key Features:
-	-The program contains inheritance in most classes as the extend from the Character
+	*The program contains inheritance in most classes as the extend from the Character
 	 class.
 	
-	-Polymorphism is used with the buttons and projectile objects.
+	*Polymorphism is used with the buttons and projectile objects.
 	
-	-The use of ArrayLists, if statements, for loops, switch cases, classes and methods
+	*The use of ArrayLists, if statements, for loops, switch cases, classes and methods
 	 is implemented in the program.
 	 
-	-The program keeps track of the user score and displays it when the user looses the game.
+	*The program keeps track of the user score and displays it when the user looses the game.
 	
-	-User interactive Menu.
+	*User interactive Menu.
