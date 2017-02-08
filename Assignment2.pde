@@ -1,3 +1,10 @@
+/*Object Oriented Programming Assignment 2:
+             Ball Dodge
+  Author:Dimiter DInkov
+  Student No: C15334276
+*/
+
+
 //Declaring objects
 Button Play;
 Button Exit;
@@ -112,13 +119,18 @@ void draw()
       break;
     }
     
+    //if in the instruction screen
     case 2:
     {
+      //Draw the background
       background(0);
       backgroundGrid();
+      
+      //Creat a button that redirects user to main menu
       Back.displayButton();
       Back.mousePressed();
       
+      //Display the instructions of the game
       fill(0,170,190);
       text("The point of the game is to avoid \n\n the red balls and collect \n\n the green ones",width/2,200);
       text("Using the keys 'A' and 'D' move \n\n left or right to move",width/2,400);
@@ -126,23 +138,30 @@ void draw()
       break;
     }
     
+    //If the exit button is clicked then the game shuts down
     case 3:
     {
       exit();
       break;
     }
     
+    //If the user dies then this screen is activated
     case 4:
     {
+      //clearing the previous screen
       clear();
+      //Allign the text in the center
       textAlign(CENTER);
+      //Tell the user his score
       text("Game Over",width/2,height/2);
       text("Your Score is :" + score,width/2,(height/2)-100);
+      //Creat a button that allows the user to play again
       PlayAgain.displayButton();
       PlayAgain.mousePressed();
       break;
     }
     
+    //if the user chooses to play again, then all the previous stats and variables are reset
     case 5:
     {
       reset();
@@ -153,7 +172,7 @@ void draw()
  
 }
 
-
+//A function that creats a nice background
 void backgroundGrid()
 {
   for(int i=-15; i<width+10; i+=30)
@@ -167,6 +186,7 @@ void backgroundGrid()
   }
 }
 
+//function that resets all the variables
 void reset()
 {  
    gamestate =1;
