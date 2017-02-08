@@ -39,7 +39,7 @@ int signal =0;
 int go=0;
 int score=1;
 int level=1;
-int max_level=5;
+int max_level=6;
 
 void draw()
 {
@@ -133,6 +133,8 @@ void draw()
     case 5:
     {
       reset();
+      candy.resetCandy();
+      break;
     }
   }//end of the switch statement
  

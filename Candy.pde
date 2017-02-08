@@ -37,6 +37,7 @@ class Candy extends Char
       y = -20;
     }
     
+    
   }
   
   void candyCollision()
@@ -49,6 +50,12 @@ class Candy extends Char
        go =0;
        signal = 0;
     }
+  }
+  
+  void resetCandy()
+  {
+      x = random(50,width-50);
+      y = -20;
   }
   
   Boolean isDead()

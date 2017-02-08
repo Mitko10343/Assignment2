@@ -51,10 +51,7 @@ class Projectile extends Char
            speed =5;
         }
      }
-    
-    
-    
-    println(speed);
+     println(speed);
   }
   
   void projectileCollision()
@@ -62,12 +59,18 @@ class Projectile extends Char
    
     if(character.xpos +30> x - 10 && character.xpos < x + 10 && y > height - 100)
     {
-       y=-25;
-       xpos = width/2;
-       speed = 5;
+       resetProjectile();
        gamestate = 4;
     }
    
+  }
+  
+  
+  void resetProjectile()
+  {
+       y=-25;
+       xpos = width/2;
+       speed = 5;
   }
   
   Boolean isDead()
