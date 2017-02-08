@@ -3,6 +3,7 @@ Button Play;
 Button Exit;
 Button Instructions;
 Button PlayAgain;
+Button Back;
 Projectile Projectile;
 Projectile projectile2;
 Char character;
@@ -25,6 +26,7 @@ void setup()
    Instructions = new Button(400,100,100,300,"Instructions",2);
    Exit = new Button(400,100,100,500,"Exit",3);
    PlayAgain = new Button(400,100,100,500,"Play Again",5);
+   Back = new Button(200,50,200,50,"Back",0);
    character = new Char();
    candy = new Candy(random(50,width-50),-20,30,20);
    
@@ -99,7 +101,15 @@ void draw()
     
     case 2:
     {
-      background(150);
+      background(0);
+      backgroundGrid();
+      Back.displayButton();
+      Back.mousePressed();
+      
+      fill(0,170,190);
+      text("The point of the game is to avoid \n\n the red balls and collect \n\n the green ones",width/2,200);
+      text("Using the keys 'A' and 'D' move \n\n left or right to move",width/2,350);
+      text("
       break;
     }
     
