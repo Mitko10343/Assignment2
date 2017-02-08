@@ -1,5 +1,7 @@
 # Assignment2
 
+#Youtube Link:
+	Link: https://www.youtube.com/watch?v=a_gnDvb5xls
 #Concept
 For our OOP assignment we had to create a game that implemented everything
 we had learned so far  in the course. 
