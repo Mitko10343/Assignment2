@@ -16,8 +16,8 @@ void setup()
 {
    size(600,800);
    
+   //Loading a font style and setting its size
    PFont font;
-   
    font = loadFont("Stencil-48.vlw");
    textFont(font,16);
    
@@ -33,7 +33,7 @@ void setup()
 }
 
 
-
+//Global variables that will be used
 int gamestate =0;
 int signal =0;
 int go=0;
@@ -43,7 +43,7 @@ int max_level=6;
 
 void draw()
 {
-  //making an array list with objects
+  //Adding objects into an array list
   for(int i=0; i<max_level; i++)
   {
      projectile.add( new Projectile(random(20,width -20),random(-200,-25),20,20));
@@ -53,10 +53,14 @@ void draw()
   //Switch statement to control what screen to be displayed
   switch(gamestate)
   {
+    //if in menu screen
     case 0:
     {
+      //Draw the background
       background(0);
       backgroundGrid();
+      
+      //Draw the buttons and include interation with each button
       Play.displayButton();
       Play.mousePressed();
       Instructions.displayButton();
@@ -66,8 +70,10 @@ void draw()
       break;
     }
     
+    //If in game screen
     case 1:
     {
+      //Draw the background
       background(0);  
       backgroundGrid();
       
@@ -77,13 +83,18 @@ void draw()
         score++;
       }
       
+      //Display score and data information
       fill(0,0,255);
       text("Score:"+score, 50,30,255);
       text("Level:"+level,width-50,30,255);
+      
+      //Draw the characte and add interaction with
       character.drawChar();
       character.keyPressed();
       character.updateChar(); 
       
+      //Depending on the level this piece of code draws a number of projectiles
+      //And also includes collision detection with each projectile and the character
       for(int i=0; i<level;i++)
       {
         Projectile p = projectile.get(i);
@@ -92,6 +103,8 @@ void draw()
         p.projectileCollision();
         
       }
+      
+      //Draw the candy  and adding collision control with character
       candy.drawCandy();
       candy.updateCandy();
       candy.candyCollision();
