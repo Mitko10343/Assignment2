@@ -45,7 +45,7 @@ is changed.
 	This is the game case. When the Play button is pressed this case is accessed
 	and the user can then play the actual game.
 	
-	![alt text](screenshots/play.jpg "Game Screen")
+	![alt text](https://github.com/Mitko10343/Assignment2/tree/master/screenshots/play.jpg "Game Screen")
 	
 -case 2:
 	This is the instruction menu. It contains a simple description of what the
