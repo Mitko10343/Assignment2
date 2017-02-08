@@ -1,10 +1,12 @@
 class Button
 {
+  //declaring the variables
   float W,H;
   float x,y;
   String Content;
   int game_state;
   
+  //Decaring a constructor for the class
   Button(float W,float H, float x, float y, String Content,int game_state)
   {
     this.W =W;
@@ -15,12 +17,14 @@ class Button
     this.game_state = game_state;
   }
   
-  
+  //A method to draw the button 
   void displayButton()
   {
     fill(0);
     strokeWeight(3);
     stroke(255);
+    
+    //If the  ouse is hovered over the button , then the background of the button changes
     if(mouseX > x && mouseX < x+W)
     {
       if(mouseY > y && mouseY < y+H)
@@ -35,7 +39,7 @@ class Button
     textSize(25);    
   }
   
-  
+  //A function that checks if the mouse is clicked on the button,it changes the gamestate of the program
   void mousePressed()
   {
     if(mouseX > x && mouseX < x+W)

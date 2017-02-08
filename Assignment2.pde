@@ -194,5 +194,5 @@ void reset()
    go=0;
    score=1;
    level=1;
-   max_level=5;
+   max_level=6;
 }
