@@ -13,3 +13,23 @@ to catch candy .
 
 #Features
 The game has a number of features
+
+*A main menu:
+		-The game has a main menu with a number of options.
+		
+*Instruction Menu:
+		-The Instruction menu can be accessed from the main menu
+		 and it tells the user how the game should be played
+
+*Actuall Game:
+		-The game can be played by clicking the 'Play' button
+		 in the main menu. 
+		 
+#Controls
+	'A' = Left;
+	'D' = Right;
+	
+#Functionality
+The game uses a switch statement to change between game states. Each button in the
+main menu changes the gamestate of the game and in turn the screen displayed
+is changed.
