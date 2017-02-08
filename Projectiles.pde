@@ -63,9 +63,11 @@ class Projectile extends Char
      }
   }
   
+  //a methos to check if the projectile has collided with the character
   void projectileCollision()
   {
-   
+    //if the projectile collides with the character then the projectile variables are reset to defaul
+    //and the game state is set to 4
     if(character.xpos +30> x - 10 && character.xpos < x + 10 && y > height - 100)
     {
        resetProjectile();
@@ -74,7 +76,7 @@ class Projectile extends Char
    
   }
   
-  
+  //A method that resets the projectile stats
   void resetProjectile()
   {
        y=-25;
@@ -82,6 +84,7 @@ class Projectile extends Char
        speed = 5;
   }
   
+  //a method that check if the projectile has hit the ground and if it has then it  returns a value of true
   Boolean isDead()
   {  
     if(y > height)
